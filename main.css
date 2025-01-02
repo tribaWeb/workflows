@@ -1,0 +1,433 @@
+/* Základní nastavení pro stránku */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* Zabrání problémům s okraji */
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; /* Horizontální centrování */
+    align-items: center; /* Vertikální centrování */
+    flex-direction: column; /* Umožňuje přizpůsobení pro obsah pod sebou */
+    scroll-behavior: smooth;
+}
+
+#navbar{
+    height: 200px;
+    display: block;
+}
+
+/* Video na pozadí bez scrollbaru */
+video {
+    position: absolute; /* Umístí video na pozadí */
+    top: 0;
+    left: 0;
+    width: 100%; /* Nastaví šířku videa přes celou stránku */
+    height: 100%; /* Nastaví výšku videa na celou stránku */
+    object-fit: cover; /* Zachová proporce a vyplní celý prostor bez bílých okrajů */
+    z-index: -1; /* Umístí video pod ostatní obsah */
+    overflow: hidden;
+}
+
+/* Logo a tlačítko nad videem */
+#hero {
+    margin-top: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 25px; /* Nastavení polohy odshora */
+    left: 0; /* Start od levého okraje */
+    right: 0; /* Konec na pravém okraji */
+    padding: 0 50px; /* Posunutí obsahu o 50px zleva a zprava */
+    z-index: 1; /* Ujistíme se, že logo a tlačítko budou nad video */
+}
+
+#logo {
+    height: 100px;
+    position: absolute;
+    left: 95px;
+    top: 30px;
+}
+
+
+
+
+
+/* Flexbox pro položky */
+.animace {
+    color: white;
+}
+
+/* Flexbox container pro texty */
+.animaceFlex {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Zajišťuje, že obsah bude nad videem */
+    position: relative; /* Umožní práci s pozicováním */
+    margin-top: 450px;
+}
+
+#mainText{
+    color: white;
+    position: absolute;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    left: 100px;
+    right: 60%;
+    font-size: 1.8rem;
+    max-width: 600px;
+}
+
+#poptavkaBtn {
+    padding: 10px 40px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block; /* Ujistíme se, že tlačítko je inline-blok */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#poptavkaBtn:hover {
+    transform: scale(1.1);
+    
+    cursor: pointer;
+}
+
+.novasekce {
+    background-color: DAD7CD; /* Světle šedé pozadí pro oddělení od ostatního obsahu */
+    margin-top: 4000px; /* Okraj od ostatního obsahu */
+    width: 100%;
+    display: flex;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    flex-direction: column;
+    color: #344E41;
+    z-index: 7;
+    flex-wrap: wrap;
+}
+
+.novasekce p {
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.imgSluzba {
+    height: 100px;
+    width: 100px;
+    z-index: 3;
+}
+
+.sluzba {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.7rem;
+    align-items: center;
+}
+
+.sekceitems {
+    max-height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 150px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.sluzba > svg {
+    width: 100px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sluzba > h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    padding-top: 40px;
+    width: 300px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.sluzba > p {
+    width: 300px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+#prezentaceMain {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.Prezentace {
+    justify-items: center;
+}
+
+.Prezentace > img {
+    width: 200px;
+    height: 300px;
+}
+
+.Prezentace > h2 {
+    text-align: center;
+}
+
+.Prezentace>a>button {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: #344E41;
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: solid 3px #344E41;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.Prezentace>a>button:hover {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+/* Ceník */
+.pricing-table {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    padding-top: 150px;
+}
+
+.pricing-card {
+    background: #344E41; /* Tmavě zelená barva */
+    color: #88d6ae; /* Světle béžová text */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Obsah rovnoměrně rozdělí mezi začátek a konec */
+}
+
+.price {
+    font-size: 1.5rem;
+}
+
+.price > h1 {
+    font-size: 1.5rem;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    flex-grow: 1; /* Seznam roztáhne volné místo, aby všechny karty měly stejnou výšku */
+}
+
+.pricing-card ul li {
+    text-align: start;
+    margin: 10px 0;
+    color: #DAD7CD; /* Světle béžová barva */
+}
+
+.pricing-card .Popis {
+    margin-top: auto; /* Posune popis na konec karty */
+    color: white;
+    font-weight: 600;
+    text-align: start; /* Zarovná popis doleva, pokud je to žádoucí */
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+}
+
+.pricing-card button:hover {
+    background: #344E41; /* Tmavší barva pro hover */
+}
+
+/* Media Queries pro mobilní zařízení */
+@media screen and (max-width: 700px) {
+    .novasekce {
+        margin-top: 8500px; /* Zvýšený margin-top na telefonech */
+    }
+    #hero {
+        margin-top: 150px;
+        flex-direction: column; /* Položky budou pod sebou */
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    #logo {
+        left: 33%;
+        margin: 0 auto; /* Vycentrování loga */
+        height: 80px; /* Zmenšení velikosti loga */
+    }
+
+    #Kontakt {
+        position: static; /* Přesune tlačítko do normálního toku */
+        margin: 20px auto; /* Vycentrování tlačítka */
+        width: auto; /* Automatická šířka */
+        font-size: 0.5rem; /* Zmenšení velikosti textu */
+    }
+
+    .animaceFlex {
+        margin-top: 200px; /* Přizpůsobení vertikální mezery */
+    }
+
+    #mainText {
+        margin: 20px auto; /* Centrované zarovnání */
+        text-align: center; /* Zarovná text na střed */
+        left: 0; /* Vynuluje polohu vlevo */
+        right: 0; /* Vynuluje polohu vpravo */
+        font-size: 1.2rem; /* Zmenší velikost písma */
+        max-width: 90%; /* Zaručuje, že text bude mít maximální šířku */
+    }
+
+    #poptavkaBtn {
+        font-size: 1.2rem; /* Zmenšení velikosti tlačítka */
+    }
+    video {
+        left: 0;
+        top: 0;
+        transform: translateX(-75%); /* Posune video lehce doleva */
+        overflow: visible;
+    }
+}
+
+#form-container {
+    margin-top: 100px;
+    background-color: #344e41;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    
+}
+
+.form-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.form-left, .form-right {
+    flex: 1;
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#form-container h1 {
+    text-align: center;
+    color: white; /* Bílé písmo pro nadpis */
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white; /* Světle šedé pozadí pro inputy */
+
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+    width: 95%;
+}
+
+.form-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.form-button button {
+    padding: 10px 20px;
+    background-color: #dad7cd;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80%;
+    transition: 0.3s;
+}
+
+.form-button button:hover {
+    scale: 1.1;
+    transition: 0.3s;
+}
+footer {
+    background-color: #344e41;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 0;
+    height: 100px;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  footer ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  footer ul li a:hover {
+    text-decoration: underline;
+  }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Administrace menu</title>
+</head>
+<body>
+    <h1>Správa menu</h1>
+    <div class="container">
+        <!-- Seznam položek menu -->
+        <section class="menu-list">
+            <h2>Položky menu</h2>
+            <ul>
+                <% menuItems.forEach((item, index) => { %>
+                <li>
+                    <strong><%= item.name %></strong> - <%= item.description %> (<%= item.price %>)
+                    <form action="/admin/delete" method="POST" style="display:inline;">
+                        <input type="hidden" name="index" value="<%= index %>">
+                        <button class="tlačitko" type="submit">Odstranit</button>
+                    </form>
+                </li>
+                <% }) %>
+            </ul>
+        </section>
+        <!-- Formulář pro přidání nové položky -->
+        <section class="menu-form">
+            <h2>Přidat novou položku</h2>
+            <form action="/admin/add" method="POST">
+                <label for="name">Název:</label>
+                <input type="text" name="name" id="name" required>
+                <label for="description">Popis:</label>
+                <input type="text" name="description" id="description" required>
+                <label for="price">Cena:</label>
+                <input type="number" name="price" id="price" required>
+                <div id="tlačítka">
+                    <button class="tlačitko" type="submit">Přidat</button>
+                    <a class="tlačitko" href="/restaurace">Zpět do restaurace</a>
+                </div>
+            </form>
+        </section>
+    </div>
+    <div style="width: fit-content; background-color: #dad7cd; border-radius: 10px; padding: 1px; font-size: 1.0rem;"><h1 style="text-align: left; padding-left: 100px; width: fit-content; color: #3a5a40;">Popis funkčnosti:</h1>
+        <p style="text-align: left; padding-left: 100px; max-width: 1000px; color: #344e41;">Tato stránka slouží pouze jako testovací ukázka, jak by mohlo v praxi fungovat vkládání položek do denního menu restaurace. Ukazuje jednoduchý proces, kde vlastník restaurace může přidávat nové položky, upravovat je nebo mazat prostřednictvím uživatelsky přívětivého rozhraní.
+
+        <br><br><strong style="color: #3a5a40;">Bezpečnostní opatření:</strong> <br>
+            V produkční verzi by byl tento administrační panel samozřejmě chráněn bezpečnostní bránou (například přihlašování s ověřením identity).
+            Navíc by tlačítko Admin na hlavní stránce nebylo viditelné pro veřejnost.
+            Vlastník stránek by měl přístup k této sekci jinou, bezpečnou cestou, například přes skrytý odkaz nebo administrátorský účet.
+            
+            <br> <br><strong style="color: #3a5a40;">Cíl ukázky:</strong><br>
+            Cílem je demonstrovat základní funkčnost systému, kde je možné dynamicky spravovat obsah denního menu bez potřeby zásahu programátora. Vlastník stránek by tak mohl rychle aktualizovat nabídku pro své zákazníky a reagovat na aktuální situaci v kuchyni.
+            
+            Tento přístup zjednodušuje každodenní provoz a zajišťuje, že stránky restaurace budou vždy aktuální a atraktivní.</p></div>
+    
+</body>
+</html>

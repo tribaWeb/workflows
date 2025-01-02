@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiktivní restaurace</title>
+  <link rel="stylesheet" href="restaurace.css">
+</head>
+<body>
+  <!-- Navigační lišta -->
+  <header>
+    <nav>
+      <ul class="nav-left">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+      </ul>
+      <div class="logo"><img src="/imgs/restauraceimg/Logo maker project.png" alt=""></div>
+      <ul class="nav-right">
+        <li><a href="#events">Akce</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+      <a id="admin" href="/admin">Admin</a>
+    </nav>
+  </header>
+
+  <!-- Banner -->
+  <section class="banner">
+
+    <div class="banner-text">
+        <div class="nadpis">      <h1>Vítejte ve Fiktivní restauraci</h1>
+            <p>Zažijte jedinečné chutě a atmosféru</p></div>
+
+    </div>
+  </section>
+
+  <!-- Sekce o restauraci -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-text">
+        <h2>O naší restauraci</h2>
+        <p>
+          Fiktivní restaurace je místo, kde se setkává jedinečná chuťová zkušenost s příjemnou atmosférou. Nabízíme
+          širokou škálu pokrmů z čerstvých a kvalitních surovin. Naše restaurace je ideálním místem pro rodinné oslavy,
+          romantické večeře nebo přátelská setkání.
+        </p>
+      </div>
+      <div class="about-photo">
+        <img src="/imgs/restauraceimg/restaurace_about.jpg" alt="Restaurace">
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="menu">
+    <h2>Denní nabídka</h2>
+    <div class="menu-container">
+      <% menuItems.forEach(item => { %>
+        <div class="menu-item">
+          <h3><%= item.name %></h3>
+          <p><%= item.description %></p>
+          <span class="price"><%= item.price %></span>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+
+<!-- Jídelní menu se stránkováním -->
+<section id="full-menu" class="full-menu">
+  <h2>Jídelní menu</h2>
+  <div class="menu-slider">
+    <div class="menu-track">
+      <!-- Stránka 1 -->
+      <div class="menu-page">
+        <div class="menu-row">
+          <span class="food-name">Hovězí burger s hranolky</span>
+          <span class="food-price">250 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Kuřecí řízek s bramborovým salátem</span>
+          <span class="food-price">190 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Penne s rajčatovou omáčkou</span>
+          <span class="food-price">160 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Grilovaný losos s citronovou omáčkou</span>
+          <span class="food-price">320 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Svíčková na smetaně s houskovým knedlíkem</span>
+          <span class="food-price">220 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Vegetariánská pizza s mozzarellou</span>
+          <span class="food-price">180 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Vepřová žebra s BBQ omáčkou</span>
+          <span class="food-price">280 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Domácí tvarohové knedlíky s jahodami</span>
+          <span class="food-price">140 Kč</span>
+        </div>
+      </div>
+      <!-- Stránka 2 -->
+      <div class="menu-page">
+        <div class="menu-row">
+          <span class="food-name">Caesar salát s kuřecím masem</span>
+          <span class="food-price">180 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Grilovaný hermelín s brusinkami</span>
+          <span class="food-price">150 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Pečená kachna se zelím</span>
+          <span class="food-price">340 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Špagety Carbonara</span>
+          <span class="food-price">180 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Pizza Prosciutto</span>
+          <span class="food-price">210 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Rizoto s mořskými plody</span>
+          <span class="food-price">270 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Bramboráky se špenátem</span>
+          <span class="food-price">130 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Grilované kuře s medovou omáčkou</span>
+          <span class="food-price">220 Kč</span>
+        </div>
+      </div>
+      <!-- Stránka 3 -->
+      <div class="menu-page">
+        <div class="menu-row">
+          <span class="food-name">Švestkové knedlíky s máslem</span>
+          <span class="food-price">120 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Tatarák s topinkami</span>
+          <span class="food-price">260 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Grilovaná zelenina s fetou</span>
+          <span class="food-price">160 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Hovězí steak s pepřovou omáčkou</span>
+          <span class="food-price">380 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Plněné papriky s rajskou omáčkou</span>
+          <span class="food-price">190 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Domácí guláš s chlebem</span>
+          <span class="food-price">160 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Pečený pstruh s bylinkami</span>
+          <span class="food-price">290 Kč</span>
+        </div>
+        <div class="menu-row">
+          <span class="food-name">Jablečný závin s vanilkovou zmrzlinou</span>
+          <span class="food-price">150 Kč</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-controls">
+    <div id="pagination"></div>
+  </div>
+</section>
+
+  <!-- Galerie -->
+  <section id="gallery" class="gallery">
+    <h2>Galerie</h2>
+    <div class="gallery-container">
+      <img src="/imgs/restauraceimg/food1.jpg" alt="Jídlo 1">
+      <img src="/imgs/restauraceimg/food2.jpg" alt="Jídlo 2">
+      <img src="/imgs/restauraceimg/food3.jpg" alt="Jídlo 3">
+      <img src="/imgs/restauraceimg/food4.jpg" alt="Jídlo 4">
+    </div>
+  </section>
+
+  <!-- Formulář na akce -->
+  <section id="events" class="events">
+    <h2>Rezervujte akce</h2>
+    <form>
+      <label for="name">Jméno:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="event-date">Datum akce:</label>
+      <input type="date" id="event-date" name="event-date" required>
+
+      <label for="message">Detaily akce:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Odeslat</button>
+    </form>
+  </section>
+
+  <!-- Kontakt -->
+  <footer id="contact">
+    <div class="contact">
+      <h2>Kontaktujte nás</h2>
+      <div class="container">
+        <p>Adresa: Náměstí 123, Město</p>
+        <p>Telefon: +420 123 456 789</p>
+        <p>Email: info@fiktivnirestaurace.cz</p>
+      </div>
+    </div>
+  </footer>
+  <div class="floating-menu" id="floatingMenu">
+    <div class="toggle-arrow" onclick="toggleMenu()">&#9664;</div>
+    <div class="menu-content">
+      <button onclick="goHome()">Domů</button>
+    </div>
+  </div>
+  
+  <script src="restaurace.js"></script>
+  </script>
+
+</body>
+</html>

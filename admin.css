@@ -1,0 +1,123 @@
+/* Globální nastavení */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* tmavě šedé pozadí */
+    color: #fff; /* bílý text */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #e60000; /* červená barva pro nadpisy */
+}
+
+h1 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+/* Flexbox container pro seznam a formulář */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Mezera mezi sekcemi */
+    margin: 20px;
+}
+
+/* Styl pro seznam položek menu */
+.menu-list {
+    flex: 1;
+    margin-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: #333; /* tmavší pozadí pro položky */
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li strong {
+    font-size: 1.2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Styl pro formulář */
+.menu-form {
+    margin-left: 200px;
+    margin-right: 200px;
+    max-width: fit-content;
+    flex: 1;
+    background-color: #333; /* tmavé pozadí */
+    padding: 50px;
+    border-radius: 5px;
+    
+}
+
+.menu-form label {
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.menu-form input {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+}
+
+.menu-form input[type="text"]:focus, 
+.menu-form input[type="number"]:focus {
+    outline: none;
+    border: 2px solid #e60000; /* červený okraj při zaměření */
+}
+
+/* Styly tlačítek */
+.tlačitko {
+    background-color: #e60000; /* červené tlačítko */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.tlačitko:hover {
+    background-color: #cc0000; /* tmavší červená na hover */
+}
+
+/* Další vylepšení stylu */
+#tlačítka {
+    display: flex;
+    gap: 10px;
+}
