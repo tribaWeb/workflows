@@ -98,8 +98,8 @@ app.post('/send-email', upload.none(), async (req, res) => {
         res.status(500).json({ message: 'Chyba při odesílání e-mailu.' });
     }
 });
-app.listen(3000, () => {
-    console.log('Server běží na http://localhost:3000');
+app.listen(8080, () => {
+    console.log('Server běží na http://localhost:8080');
 });
 
 // Inicializace BrowserSync pro hot reload
